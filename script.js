@@ -30,7 +30,7 @@ Promise.all([promise1,promise2,promise3]).then((data)=>{
 			let el=document.createElement("img");
 			el.style.width="200px";
 			el.style.height="300px";
-			el.src=`${src}`
+			el.src=src;
 			output.appendChild(el)
 			// output.innerHTML
 		}
