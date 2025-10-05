@@ -16,24 +16,23 @@ new_el.id="loading";
 new_el.class="spinner"
 new_el.innerHTML="Loading..."
 output.appendChild(new_el)
-for(let x=0;x<images.length;x++)
-	{
-	 prom_arr.push( fetch(images[x].url))
-	}
-//console.log(prom_arr)
+promise1= fetch(images[0].url);
+promise2= fetch(images[1].url);
+promise3= fetch(images[2].url);	
 
-Promise.all(prom_arr).then((data)=>{
+
+Promise.all([promise1,promise2,promise3]).then((data)=>{
 	output.innerHTML="";
 	for(let x=0;x<data.length;x++)
 		{
-		let src=data[x].url;
-			//console.log(src)
+		let src=data[x];
+			console.log(src)
 			let el=document.createElement("img");
 			el.style.width="200px";
 			el.style.height="300px";
 			el.src=`${src}`
 			output.appendChild(el)
-			output.innerHTML
+			// output.innerHTML
 		}
 }).catch((error)=>{
 	
