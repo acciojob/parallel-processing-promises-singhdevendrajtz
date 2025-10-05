@@ -8,12 +8,9 @@ const images = [
   { url: "https://picsum.photos/id/239/200/300" },
 ];
 
-let new_el1=document.createElement("button");
-new_el1.id="download-mages-button";
-// new_el.class="spinner"
-new_el1.innerHTML="Download"
-output.appendChild(new_el1)
-new_el1.addEventListener('click',function(){
+// let new_el1=document.createElement("button");
+
+btn.addEventListener('click',function(){
 let new_el=document.createElement("div");
 new_el.id="loading";
 new_el.class="spinner"
