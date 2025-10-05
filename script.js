@@ -7,12 +7,18 @@ const images = [
   { url: "https://picsum.photos/id/238/200/300" },
   { url: "https://picsum.photos/id/239/200/300" },
 ];
+
+let new_el1=document.createElement("button");
+new_el1.id="download-mages-button";
+// new_el.class="spinner"
+new_el1.innerHTML="Download"
+output.appendChild(new_el1)
+new_el1.addEventListener('click',function(){
 let new_el=document.createElement("div");
 new_el.id="loading";
 new_el.class="spinner"
 new_el.innerHTML="Loading..."
 output.appendChild(new_el)
-
 for(let x=0;x<images.length;x++)
 	{
 	 prom_arr.push( fetch(images[x].url))
@@ -38,4 +44,5 @@ Promise.all(prom_arr).then((data)=>{
 	elems.id="error"
 	elems.innerHTML=`${error}`
 	output.appendChild(elems);
+});
 });
