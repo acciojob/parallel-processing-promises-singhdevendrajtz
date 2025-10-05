@@ -25,7 +25,7 @@ Promise.all([promise1,promise2,promise3]).then((data)=>{
 	output.innerHTML="";
 	for(let x=0;x<data.length;x++)
 		{
-		let src=data[x];
+		let src=images[x].url;
 			console.log(src)
 			let el=document.createElement("img");
 			el.style.width="200px";
